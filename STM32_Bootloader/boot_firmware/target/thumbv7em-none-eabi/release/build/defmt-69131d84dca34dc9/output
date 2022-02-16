@@ -1,0 +1,1 @@
+cargo:rustc-link-search=/Users/yashwanthsingh/Desktop/STM32_Bootloader/boot_firmware/target/thumbv7em-none-eabi/release/build/defmt-69131d84dca34dc9/out
