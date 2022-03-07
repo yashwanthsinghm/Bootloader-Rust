@@ -28,7 +28,7 @@ Since I am using a Cortex-M4 device in this case, I choose the thumbv7em-none-ea
 Generating the project using Cargo :
 
     ~ cargo new bootloader
-    ~ cargo new boot_firmare
+    ~ cargo new boot_firmware
 
 We will next add a configuration file to the project to instruct Cargo to compile for the appropriate target by default. In the root of the project, create the directory .cargo Create and open config.toml file and add the following :
 
@@ -54,7 +54,7 @@ We will next add a configuration file to the project to instruct Cargo to compil
     rb = "run --bin"
     rrb = "run --release --bin"
 
-Since I am using a Cortex-M0 device in this case, so I have enabled `target = "thumbv7em-none-eabihf"`
+Since I am using a Cortex-M4 device in this case, so I have enabled `target = "thumbv7em-none-eabihf"`
 
 Since different devices have varying amounts of Flash and RAM, we need to define a linker file, its values will need to be updated according to the values in the datasheet of your specific device (in the Memory Mapping section). `Note` that using this linker file on a device with more available Flash and/or RAM will render that memory unusable by the application. Create the file memory.x in the root of your project, and populate it with the following, updating the ORIGIN and LENGTH fields if required :
 
@@ -65,34 +65,21 @@ Since different devices have varying amounts of Flash and RAM, we need to define
     /* NOTE 1 K = 1 KiBi = 1024 bytes */
     /* TODO Adjust these memory regions to match your device memory layout */
     /* These values correspond to the LM3S6965, one of the few devices QEMU can emulate */
-    FLASH    (rx)  : ORIGIN = 0x08000000, LENGTH = 64K
-    RAM      (rwx) : ORIGIN = 0x20000000, LENGTH = 28K 
-    }
-
-    /* This is where the call stack will be allocated. */
-    /* The stack is of the full descending type. */
-    /* You may want to use this variable to locate the call stack and static
-    variables in different memory regions. Below is shown the default value */
-    /* _stack_start = ORIGIN(RAM) + LENGTH(RAM); */
-    
-
+    FLASH    (rx)  : ORIGIN = 0x08000000, LENGTH = 128K
+    RAM      (rwx) : ORIGIN = 0x20000000, LENGTH = 128K 
+    }    
 
  `linker file for boot_firmware`
-
  MEMORY
     {
     /* NOTE 1 K = 1 KiBi = 1024 bytes */
     /* TODO Adjust these memory regions to match your device memory layout */
     /* These values correspond to the LM3S6965, one of the few devices QEMU can emulate */
-    FLASH    (rx)  : ORIGIN = 0x08020000, LENGTH = 64K
-    RAM      (rwx) : ORIGIN = 0x20000000, LENGTH = 28K 
+    FLASH    (rx)  : ORIGIN = 0x08020000, LENGTH = 128K
+    RAM      (rwx) : ORIGIN = 0x20000000, LENGTH = 128K 
     }
 
-    /* This is where the call stack will be allocated. */
-    /* The stack is of the full descending type. */
-    /* You may want to use this variable to locate the call stack and static
-    variables in different memory regions. Below is shown the default value */
-    /* _stack_start = ORIGIN(RAM) + LENGTH(RAM); */
+
 
 We'll update Cargo.toml, open it in a text editor and add the prerequisite crates under `[dependencies]`. If you are not using an STM32F4 series device, change the stm32f4xx-hal crate to the appropriate alternative.
 
@@ -123,6 +110,8 @@ To flash the binary use this command :
 
 
 https://user-images.githubusercontent.com/97118799/154233080-41eaf917-308f-4caf-b107-97e851809371.mp4
+
+Green led is blinking from bootloader and red led is blinking from bootfirmware
 
 Yashwanth Singh M ,2022
 Licensed under [MIT License](LICENSE]
