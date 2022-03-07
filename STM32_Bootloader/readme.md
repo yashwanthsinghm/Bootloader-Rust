@@ -114,8 +114,8 @@ To flash the binary use this command :
 
 https://user-images.githubusercontent.com/97118799/154233080-41eaf917-308f-4caf-b107-97e851809371.mp4
 
-Green led is blinking from bootloader and red led is blinking from bootfirmware
+`Green led is blinking from bootloader and red led is blinking from bootfirmware`
 
 Yashwanth Singh M ,2022
-Licensed under [MIT License](LICENSE]
+Licensed under [MIT License](LICENSE)
 
