@@ -70,14 +70,15 @@ Since different devices have varying amounts of Flash and RAM, we need to define
     }    
 
  `linker file for boot_firmware`
- MEMORY
+ 
+ `MEMORY
     {
     /* NOTE 1 K = 1 KiBi = 1024 bytes */
     /* TODO Adjust these memory regions to match your device memory layout */
     /* These values correspond to the LM3S6965, one of the few devices QEMU can emulate */
     FLASH    (rx)  : ORIGIN = 0x08020000, LENGTH = 128K
     RAM      (rwx) : ORIGIN = 0x20000000, LENGTH = 128K 
-    }
+    }`
 
 
 
