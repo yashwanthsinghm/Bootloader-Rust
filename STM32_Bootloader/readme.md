@@ -1,7 +1,7 @@
 # **STM32_Bootloader**
 [Rust](https://www.rust-lang.org) is showing great promise in the embedded world, and offers many benefits (like memory safety!). In this project, we will walk through developing a basic application for an STM32 microcontroller. I developed this using a [STM32F411VE-DISCO](https://www.st.com/en/evaluation-tools/32f411ediscovery.html) discovery board, but it should be easily adaptable to most STM32 devices.
 
-`It is custom bootloader after boot firmware is executed it jumps to user application which is bootfirmware!`
+`It is custom bootloader ,after reset bootloader is executed then it jumps to user application which is bootfirmware!`
 
 ## Toolchin-Setup 
 We need to make sure that we have an up-to-date version of Rust installed. If you do not have Rust installed, please refer to the [Rust documentation](https://www.rust-lang.org/tools/install) for installation instructions. To avoid problems it's recommended to use the most recent version of Rust available to you.
