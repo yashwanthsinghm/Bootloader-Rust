@@ -1,3 +1,0 @@
-cargo:rustc-link-search=/Users/yashwanthsingh/Desktop/STM32_Bootloader/bootloader/target/thumbv7em-none-eabi/release/build/stm32f4-4eb57e704bc5b79a/out
-cargo:rerun-if-changed=src/stm32f411/device.x
-cargo:rerun-if-changed=build.rs

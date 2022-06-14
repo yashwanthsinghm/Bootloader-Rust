@@ -1,6 +1,0 @@
-cargo:rustc-link-lib=static=cortex-m-rt
-cargo:rustc-cfg=cortex_m
-cargo:rustc-cfg=armv7m
-cargo:rustc-link-search=/Users/yashwanthsingh/Desktop/STM32_Bootloader/bootloader/target/thumbv7em-none-eabi/release/build/cortex-m-rt-2ea2216cf5bd2fe2/out
-cargo:rerun-if-changed=build.rs
-cargo:rerun-if-changed=link.x.in

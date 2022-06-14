@@ -1,3 +1,0 @@
-cargo:rustc-link-search=/Users/yashwanthsingh/Desktop/STM32_Bootloader/bootloader/target/thumbv7em-none-eabi/release/build/bootloader-4b64dee5d99c6823/out
-cargo:rerun-if-changed=build.rs
-cargo:rerun-if-changed=memory.x

@@ -1,1 +1,0 @@
-/Users/yashwanthsingh/Desktop/STM32_Bootloader/bootloader/target/thumbv7em-none-eabi/release/bootloader: /Users/yashwanthsingh/Desktop/STM32_Bootloader/bootloader/build.rs /Users/yashwanthsingh/Desktop/STM32_Bootloader/bootloader/memory.x /Users/yashwanthsingh/Desktop/STM32_Bootloader/bootloader/src/main.rs
